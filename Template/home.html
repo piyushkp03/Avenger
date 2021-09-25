@@ -1,0 +1,147 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>I am Avenger</title>
+	  <style>
+		
+	 html {
+	  height: 100%;
+	  margin: 0;
+	}
+
+
+	
+	h1{
+		color:red;
+		
+		padding-bottom:20px;
+		top:0px;
+		
+	}
+	
+	
+	.top{
+    /*position:fixed;
+    padding:0;
+    margin:0;
+	left:0;
+	top:0;
+	border:20px solid grey;
+	background-color:grey;*/
+    
+	}
+	body{
+	background-image:url("static/imgg.jpg");
+	height:100%;
+	background-repeat:no-repeat;
+	background-size:cover;
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+
+  /* Preserve aspet ratio */
+  	/*min-width: 100%;
+  	min-height: 100%;*/
+	
+	
+	}
+	#form{
+	justify-content: center;
+  	align-items: center;
+	width:55%;
+	border-radius:10px;
+		
+	
+	border:1px solid green;
+	
+	margin:auto;
+	
+	
+
+	background-color:#a8d5ee;
+	}
+	#btn{
+	/*margin-left:80px;
+	margin-bottom:14px;*/
+	
+	}
+	h2{
+		
+		color:blue;
+		
+	}
+
+</style>
+
+  </head>
+  <body>
+	
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+	<h1 style="margin:auto; text-align:center; z-index:10;">You are Avenger!!!</h1>
+
+
+
+{% if error != "" %}
+	  <script type="text/javascript">alert("{{error}}");
+		  alert("Hello asjha sjhsxjshs");
+	  <h1>There is an error</h1>
+	  </script>
+	  
+{% endif %}
+
+
+<div class="container">
+  <!-- <form action="know" method="post" id="form">
+	{% csrf_token %}
+    &ensp;Name:<input type="text" name='uname'><br><br>
+	&emsp; Age:<input type="number" ><br><br>
+	<input type="submit" value="Submit" id="btn">
+
+</form>-->
+	
+<form action="know" style="margin-top:25%;" method="post" id="form">
+	{% csrf_token %}
+  <div class="form-group">
+    
+    <input type="text" style="padding:20px; background-color:#a8d5ee;"  name='uname' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Name" required>
+   
+  </div>
+  <div class="form-group">
+   
+    <input type="number" name='uage' style="padding:20px; background-color:#a8d5ee;" class="form-control" id="exampleInputPassword1" placeholder="Age" required>
+  </div>
+<div class="form-group">
+    
+    
+      <h5>Choose your gender:</h5>
+        <label for="male">Male</label>
+        <input type="radio" name="ugender" id="male" value="male" checked>
+        <label for="female">Female</label>
+        <input type="radio" name="ugender" id="female" value="female">
+   
+</div>
+  <div class="form-group">
+ <input type="submit"  style="padding:20px;  margin-left:40%;" class="btn btn-primary" value="Submit" id="btn">
+ 
+
+
+</div>
+</form>
+
+		<h5 style="padding:4px; color:white;">Submit the details to PIYUSHKP to know which Avenger's character you match..</h5>
+</div>
+</body>
+</html>
+   
